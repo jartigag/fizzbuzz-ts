@@ -1,6 +1,6 @@
-import { fizzBuzzNumber } from '../src/fizzbuzz'
+import { fizzBuzzArray, fizzBuzzNumber } from '../src/fizzbuzz'
 
-describe('FizzBuzz', () => {
+describe('fizzBuzzNumber', () => {
     it('returns number if number not divisible neither by 3 nor 5', () => {
         expect(fizzBuzzNumber(1)).toEqual(1)
     })
@@ -15,5 +15,15 @@ describe('FizzBuzz', () => {
     })
     it('returns Buzz if number is divisible by 5', () => {
         expect(fizzBuzzNumber(5)).toEqual('Buzz')
+    })
+
+    it('returns error if param is not positive', () => {
+        expect(fizzBuzzNumber(0)).toEqual(Error('Invalid number'))
+    })
+})
+
+describe('fizzBuzzArray', () => {
+    it('returns array', () => {
+        expect(fizzBuzzArray([1,2])).toEqual([1,2])
     })
 })
