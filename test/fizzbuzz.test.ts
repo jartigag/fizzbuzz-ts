@@ -16,6 +16,9 @@ describe('fizzBuzzNumber', () => {
     it('returns Buzz if number is divisible by 5', () => {
         expect(fizzBuzzNumber(5)).toEqual('Buzz')
     })
+    it('returns FizzBuzz if number is divisible by 3 and 5', () => {
+        expect(fizzBuzzNumber(15)).toEqual('FizzBuzz')
+    })
 
     it('returns error if param is not positive', () => {
         expect(fizzBuzzNumber(0)).toEqual(Error('Invalid number'))
@@ -25,5 +28,15 @@ describe('fizzBuzzNumber', () => {
 describe('fizzBuzzArray', () => {
     it('returns array', () => {
         expect(fizzBuzzArray([1,2])).toEqual([1,2])
+    })
+    it('returns array of length 100', () => {
+        expect(fizzBuzzArray(Array.from(Array(100).keys()))).toHaveLength(100)
+    })
+
+    it('returns Fizz if divisible by 3', () => {
+        expect(fizzBuzzArray([1,2,3])).toEqual([1,2,'Fizz'])
+    })
+    it('returns Buzz if divisible by 5', () => {
+        expect(fizzBuzzArray([1,2,3,4,5])).toEqual([1,2,'Fizz',4,'Buzz'])
     })
 })
