@@ -29,8 +29,8 @@ describe('fizzBuzzArray', () => {
     it('returns array', () => {
         expect(fizzBuzzArray([1,2])).toEqual([1,2])
     })
-    it('returns array of length 100', () => {
-        expect(fizzBuzzArray(Array.from(Array(100).keys()))).toHaveLength(100)
+    it('checks that array=[1,...,100] has length 100', () => {
+        expect(fizzBuzzArray(Array.from({length: 100}, (_, i) => i + 1))).toHaveLength(100)
     })
 
     it('returns Fizz if divisible by 3', () => {
@@ -38,5 +38,11 @@ describe('fizzBuzzArray', () => {
     })
     it('returns Buzz if divisible by 5', () => {
         expect(fizzBuzzArray([1,2,3,4,5])).toEqual([1,2,'Fizz',4,'Buzz'])
+    })
+
+    it('if array=[1,...,100], returns 6 FizzBuzz, 33-6=27 Fizz and 20-6=14 Buzz', () => {
+        expect(fizzBuzzArray(Array.from({length: 100}, (_, i) => i + 1)).filter(x => x==='FizzBuzz')).toHaveLength(6)
+        expect(fizzBuzzArray(Array.from({length: 100}, (_, i) => i + 1)).filter(x => x==='Fizz')    ).toHaveLength(27)
+        expect(fizzBuzzArray(Array.from({length: 100}, (_, i) => i + 1)).filter(x => x==='Buzz')    ).toHaveLength(14)
     })
 })
