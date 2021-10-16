@@ -2,7 +2,7 @@ import { fizzBuzzArray, fizzBuzzNumber } from '../src/fizzbuzz'
 
 describe('fizzBuzzNumber', () => {
     it('returns number if number not divisible neither by 3 nor 5', () => {
-        expect(fizzBuzzNumber(1)).toEqual(1)
+        expect(fizzBuzzNumber(1)).toEqual('1')
     })
     it('returns Fizz if number is 3', () => {
         expect(fizzBuzzNumber(3)).toEqual('Fizz')
@@ -27,16 +27,16 @@ describe('fizzBuzzNumber', () => {
 
 describe('fizzBuzzArray', () => {
     it('returns array', () => {
-        expect(fizzBuzzArray([1,2])).toEqual([1,2])
+        expect(fizzBuzzArray([1,2])).toEqual(['1','2'])
     })
     it('checks that array=[1,...,100] has length 100', () => {
         expect(fizzBuzzArray(Array.from({length: 100}, (_, i) => i + 1))).toHaveLength(100)
     })
 
     it('returns Fizz if divisible by 3', () => {
-        expect(fizzBuzzArray([1,2,3])).toEqual([1,2,'Fizz'])
+        expect(fizzBuzzArray([1,2,3])).toEqual(['1','2','Fizz'])
     })
     it('returns Buzz if divisible by 5', () => {
-        expect(fizzBuzzArray([1,2,3,4,5])).toEqual([1,2,'Fizz',4,'Buzz'])
+        expect(fizzBuzzArray([1,2,3,4,5])).toEqual(['1','2','Fizz','4','Buzz'])
     })
 })
