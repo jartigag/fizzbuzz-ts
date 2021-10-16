@@ -23,6 +23,14 @@ describe('fizzBuzzNumber', () => {
     it('returns error if param is not positive', () => {
         expect(fizzBuzzNumber(0)).toEqual(Error('Invalid number'))
     })
+
+    // New requeriments:
+    it('returns Fizz if number contains a 3', () => {
+        expect(fizzBuzzNumber(31)).toEqual('Fizz')
+    })
+    it('returns Buzz if number contains a 5', () => {
+        expect(fizzBuzzNumber(52)).toEqual('Buzz')
+    })
 })
 
 describe('fizzBuzzArray', () => {
